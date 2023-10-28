@@ -1,7 +1,6 @@
 const initialState = {
   todos: [
-    { id: 1, value: "belajar react" },
-    { id: 2, value: "belajar redux" },
+    { id: 1, value: "Learn Figma" },
   ],
 };
 

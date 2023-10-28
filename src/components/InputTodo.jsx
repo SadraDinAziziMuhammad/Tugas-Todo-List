@@ -1,29 +1,29 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../redux/reducers/todo-reducer";
 
 function InputTodo() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [input, setInput] = useState("");
 
   const handleClick = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     console.log(input);
-    dispatch(addTodo(input))
-    setInput("")
+    dispatch(addTodo(input));
+    setInput("");
   }
 
   return (
-    <div>
-      <form className="mt-10 ml-5">
+    <div className="text-center mt-10">
+      <form className="mx-auto">
         <input 
-        className="border-solid border-2 border-black rounded"
+          className="border-solid border-2 border-black rounded pl-3"
           type="text"
-          placeholder="input todo"
+          placeholder="What to do"
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        <button onClick={handleClick} className="ml-2">Add</button>
+        <button onClick={handleClick} className="ml-2 bg-purple-600 pr-3 pl-3 rounded-md border-solid border-2 border-purple-700 text-white">Add</button>
       </form>
     </div>
   );
